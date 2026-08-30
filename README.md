@@ -1,29 +1,35 @@
 # Skill Planner
 
-A native client mod for [Ugaris](https://ugaris.com) that makes the
-raise-cost math visible. Type `#plan`:
+A native client mod for [Ugaris](https://ugaris.com): a full build
+calculator on top of the client's own cost function. Type `#plan`.
 
-- Every raisable skill with its current value and the **exact cost of the
-  next point** — the same numbers the skill window shows, computed with the
-  client's own cost function.
-- **How many points you can afford** with your unused experience, per skill.
-- **Targets**: click a skill, set a target value with `[-]` / `[+]`
-  (shift = 10 points), and see the exact total cost from where you are —
-  green when you can afford it, red with the real number when you can't.
-- Sort by table order or cheapest-next-point first.
-- Header with your level, unused and spent experience.
-
-Targets and the sort choice persist in `<client config dir>/skill_planner.cfg`.
+- **Exact costs** — every raisable skill with the cost of its next point
+  (identical to the skill window's numbers) and how many points your
+  unused experience can buy right now.
+- **Targets** — click a skill, set a target with the `[-]` / `[+]` buttons
+  (shift = 10 points). Each targeted skill shows the exact total cost,
+  green when affordable; the footer sums the whole build.
+- **Apply** — one confirmed click raises the entire build for you. Each
+  raise waits for the server's acknowledgment before the next is sent, and
+  the run stops cleanly if experience runs out. `#plan stop` cancels.
+- **Builds as shareable JSON** — `#plan save <name>` writes
+  `skill_build_<name>.json` (keyed by skill *names*) into your client
+  config dir. Share the file with other players; they `#plan load <name>`
+  and work toward the same build. `#plan builds` lists what you have.
+- **Draggable** — move the window by its title bar; the position, targets
+  and sorting persist.
 
 ## Commands
 
 | Command | Effect |
 |---------|--------|
 | `#plan` | Toggle the planner window |
-| `#plan help` | Help |
-
-Mouse: click a skill to select it, `[-]`/`[+]` to move its target, wheel
-scrolls, `[x]` closes.
+| `#plan save <name>` | Save current targets as a build |
+| `#plan load <name>` | Load a build (skills matched by name) |
+| `#plan builds` | List saved builds |
+| `#plan clear` | Clear all targets |
+| `#plan apply` | Apply the build (asks to confirm) |
+| `#plan stop` | Stop an in-progress apply |
 
 ## Installing
 
