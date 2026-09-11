@@ -7,22 +7,23 @@
   "type": "dll",
   "files": [
     {
-      "name": "bmod.dll",
+      "name": "skill_planner.dll",
       "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.1.0/bmod.dll",
       "platform": "windows"
     },
     {
-      "name": "bmod.dylib",
+      "name": "skill_planner.dylib",
       "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.1.0/bmod.dylib",
       "platform": "macos"
     },
     {
-      "name": "bmod.so",
+      "name": "skill_planner.so",
       "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.1.0/bmod.so",
       "platform": "linux"
     }
   ],
   "tags": ["utility", "skills", "planning", "exp"],
+  "entry": "skill_planner",
   "homepage": "https://github.com/Ugaris/skill-planner-mod",
   "branch": "main"
 }
