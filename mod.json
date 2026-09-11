@@ -1,6 +1,6 @@
 {
   "name": "Skill Planner",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Makes the raise-cost math visible: every skill's next-point cost, how many points your unused exp can buy, and per-skill targets with exact totals. Type #plan.",
   "author": "Ugaris Team",
   "authorUrl": "https://github.com/Ugaris",
@@ -8,17 +8,17 @@
   "files": [
     {
       "name": "skill_planner.dll",
-      "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.1.1/skill_planner.dll",
+      "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.2.0/skill_planner.dll",
       "platform": "windows"
     },
     {
       "name": "skill_planner.dylib",
-      "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.1.1/skill_planner.dylib",
+      "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.2.0/skill_planner.dylib",
       "platform": "macos"
     },
     {
       "name": "skill_planner.so",
-      "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.1.1/skill_planner.so",
+      "path": "https://github.com/Ugaris/skill-planner-mod/releases/download/v1.2.0/skill_planner.so",
       "platform": "linux"
     }
   ],
