@@ -854,6 +854,37 @@ DLL_EXPORT int amod_mouse_click(int x, int y, int what)
     return 1;
 }
 
+/* ---- Options > Mods ------------------------------------------------------
+ * The window's own sort button writes the same variable; both save. */
+DLL_EXPORT int amod_options_count(void)
+{
+    return 2;
+}
+
+DLL_EXPORT int amod_option_get(int index, struct amod_option *out)
+{
+    memset(out, 0, sizeof(*out));
+    if (index == 0) {
+        out->type = AMOD_OPT_HEADER;
+        snprintf(out->label, sizeof(out->label), "Skill Planner");
+        return 1;
+    }
+    if (index == 1) {
+        out->type = AMOD_OPT_TOGGLE;
+        out->value = s_sort_cheap;
+        snprintf(out->label, sizeof(out->label), "Sort by cheapest first");
+        return 1;
+    }
+    return 0;
+}
+
+DLL_EXPORT void amod_option_set(int index, int value)
+{
+    if (index != 1) return;
+    s_sort_cheap = value;
+    save_config();
+}
+
 DLL_EXPORT int amod_client_cmd(const char *buf)
 {
     if (strncmp(buf, "#plan", 5)) return 0;
